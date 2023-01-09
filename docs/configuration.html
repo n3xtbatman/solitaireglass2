@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuration &mdash; html5 solitaire 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="html5 solitaire 1.0 documentation" href="index.html" />
+    <link rel="next" title="Translating the game" href="translate.html" />
+    <link rel="prev" title="Getting started" href="intro.html" />
+   
+  
+  <link media="only screen and (max-device-width: 480px)" href="_static/small_flask.css" type= "text/css" rel="stylesheet" />
+
+  </head>
+  <body>
+  
+  
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="translate.html" title="Translating the game"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Getting started"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">html5 solitaire 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<p>Below is an example with all available options and their defaults values:</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">Solitaire</span><span class="p">({</span>
+    <span class="c1">// Deduct N points every t seconds</span>
+    <span class="nx">every</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">// seconds</span>
+    <span class="nx">deduct</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="c1">// points</span>
+
+    <span class="nx">allowedDraws</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="c1">// times you can pass through the deck of cards</span>
+    <span class="nx">draw3</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// Draw three cards at once</span>
+    <span class="nx">points</span><span class="o">:</span> <span class="p">{</span>
+        <span class="c1">// see below</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>You can specify the width and height in the &lt;solitaire&gt; tag</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;solitaire</span> <span class="na">width=</span><span class="s">&quot;500&quot;</span> <span class="na">height=</span><span class="s">&quot;700&quot;</span><span class="nt">&gt;&lt;/solitaire&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="setting-the-game-score">
+<h2>Setting the game score<a class="headerlink" href="#setting-the-game-score" title="Permalink to this headline">¶</a></h2>
+<p>By default the points are given as follow (see <a class="reference internal" href="terminology.html"><em>Terminology</em></a>).</p>
+<blockquote>
+<div><ul class="simple">
+<li>move card to foundation: 10</li>
+<li>turn a card: 5</li>
+<li>move a card from waste to tableau: 5</li>
+<li>move a card from foundation to tableau: -15</li>
+<li>every 10 seconds 2 point are discounted</li>
+</ul>
+</div></blockquote>
+<p>You can change this behavior through the <cite>points</cite> option:</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">Solitaire</span><span class="p">({</span>
+    <span class="c1">// ... More options</span>
+    <span class="nx">points</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">move_to_foundation</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="nx">waste_to_tableau</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="nx">foundation_to_tableau</span><span class="o">:</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span>
+        <span class="nx">turn_card</span><span class="o">:</span> <span class="mi">5</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Configuration</a><ul>
+<li><a class="reference internal" href="#setting-the-game-score">Setting the game score</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="intro.html" title="previous chapter">Getting started</a></li>
+      <li>Next: <a href="translate.html" title="next chapter">Translating the game</a></li>
+  </ul></li>
+</ul>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/configuration.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright 2013, Jhonatan Salguero Villa.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+  </body>
+</html>
