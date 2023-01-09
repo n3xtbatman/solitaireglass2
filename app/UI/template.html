@@ -1,0 +1,22 @@
+<ul id="html5-solitaire-sidebar">
+    <li><button data-sol-action="restart"><i class="icon-refresh"></i> <%= _e("newGame") %></button></li>
+    <li><button data-sol-action="switch-sound"><i id="solitaire-sound-icon" class="icon-volume-up"></i> <%= _e("sound") %></button></li>
+    <li><button data-sol-action="draw3"><i id="solitaire-draw3-icon" class="icon-check-empty"></i> <%= _e("draw3") %></button></li>
+    <li><button data-sol-action="show-stats"><i class="icon-bar-chart"></i> <%= _e("stats") %></button></li>
+  </ul>
+  <div id="html5-solitaire-board">
+  <ul id="html5-solitaire-topbar">
+    <li id="html5-solitaire-options"><button><i class="icon-reorder"></i></button>
+    <span id="html5-solitaire-timer">00:00</span>
+    </li>
+    <li id="html5-solitaire-undo"><button><i class="icon-undo"></i> <span><%= _e("undo") %></span></button></li>
+    <li id="html5-solitaire-score"><%= _e("pointsTemplate") %></li>
+  </ul>
+  <canvas id="html5-solitaire-canvas"></canvas>
+  <div id="html5-solitaire-board-overlay"></div>
+</div>
+<div id="html5-solitaire-overlay"></div>
+
+  <div id="html5-solitaire-dialog">
+    <div id="html5-solitaire-dialog-message"></div>
+  </div>

@@ -1,0 +1,12 @@
+<h1><%= _e("stats") %></h1>
+
+    <button id="html5-solitaire-reset-stats" data-reset-stats><%= _e("resetStats") %></button>
+    <table>
+    <% _.each('total wins winPercentage bestTime worstTime bestScore worstScore'.split(" "), function(key) { %>
+      <tr>
+        <th><%= _e(key) %></th>
+        <td><%= _e(stats[key]) %></td>
+      </tr>
+    <% }); %>
+    </table>
+    <button id="html5-solitaire-dialog-close" data-close-button><%= _e("modalCloseButton") %></button>
